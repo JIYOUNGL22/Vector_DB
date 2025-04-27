@@ -17,7 +17,7 @@
     *   OpenAI GPT-4o 모델과 Retriever를 결합한 `RetrievalQA` 체인 구성.
 *   **검색 품질 관리 및 개선 시도 :**
     *   유사도 점수 기반 결과 필터링 로직 구현 (임계값 설정).
-    *   (실험적) 금융 용어 유사어 사전을 통한 쿼리 확장 기능 구현 시도 (Recall 향상 목적).
+    *   금융 용어 유사어 사전을 통한 쿼리 확장 기능 구현 시도 (Recall 향상 목적).
 *   **인터랙티브 데모 :**
     *   `Gradio`를 활용하여 사용자가 직접 질문하고 답변을 확인할 수 있는 웹 기반 데모 인터페이스 구축.
 
@@ -28,12 +28,12 @@
     *   `Langchain`, `Langchain-OpenAI`, `Langchain-Community`
     *   `OpenAI` (GPT-4o)
     *   `Hugging Face Transformers`, `Datasets`, `Tokenizers`
-    *   `ChromaDB`, `FAISS` (설치됨)
+    *   `ChromaDB`, `FAISS`
     *   `Pandas`, `Matplotlib`, `Tiktoken`
     *   `Gradio` (v3.50.2)
 *   **임베딩 모델:**
     *   BGE-M3 기반 한국어/금융 특화 모델 (`seongil-dn/bge-m3-kor-retrieval...`)
-    *   OpenAI Embeddings (실험적 사용)
+    *   OpenAI Embeddings
 *   **실행 환경:** Google Colab (GPU)
 *   **데이터:** Hugging Face (`aiqwe/FinShibainu`, 시사경제용어사전 필터링)
 
@@ -47,7 +47,7 @@
 *   ** 신규 상담 콘텐츠/학습 데이터 작성:** 외부 데이터셋(Hugging Face)을 로드하고 RAG 시스템에 적합하도록 분석, 전처리, 필터링하는 역량 시연.
 *   ** 고객 발화 분석 및 학습 개선 사항 도출:** 유사어 확장, 유사도 스코어 필터링 등 검색/응답 품질 개선을 위한 아이디어 구현 및 실험 경험.
 *   ** Python, 데이터 분석 툴 이용:** 프로젝트 전반에 `Python`을 능숙하게 사용하며 `Pandas`, `Matplotlib` 등 데이터 처리 및 분석 라이브러리 활용 능력 보유.
-*   ** 자연어 처리 기본 개념 이해:** 임베딩, 토크나이저, VectorDB, RAG 등 핵심 NLP 개념을 이해하고 실제 코드에 적용 (`우대사항`). 특히, 한국어 및 금융 도메인에 적합한 모델(Tokenizer, Embedding)을 선정하여 적용.
+*   ** 자연어 처리 기본 개념 이해:** 임베딩, 토크나이저, VectorDB, RAG 등 핵심 NLP 개념을 이해하고 실제 코드에 적용. 특히, 한국어 및 금융 도메인에 적합한 모델(Tokenizer, Embedding)을 선정하여 적용.
 
 ## 5. 주요 코드 하이라이트
 
@@ -57,7 +57,7 @@
 
 ## 6. 실행 방법 (Gradio 데모)
 
-1.  제공된 Jupyter Notebook (`vectorDB (1).ipynb`)을 Google Colab 환경에서 엽니다.
+1.  제공된 Jupyter Notebook (`vectorDB.ipynb`)을 Google Colab 환경에서 엽니다.
 2.  **OpenAI API 키 설정:** Notebook 내 `os.environ["OPENAI_API_KEY"] = ...` 부분을 본인의 키로 설정합니다.
 3.  Notebook의 모든 셀을 순차적으로 실행합니다.
 4.  마지막 셀(`import gradio as gr`)을 실행하면 데모 UI가 실행되고 **Public URL**이 출력됩니다.
